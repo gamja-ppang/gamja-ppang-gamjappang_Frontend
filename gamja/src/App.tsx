@@ -6,7 +6,7 @@ import Main from "./pages/main";
 import Signup from "./pages/signup";
 import Write from "./pages/write";
 import { Reset } from "styled-reset";
-import ImgSlide from "./components/main/ImgSlide";
+import Post from './components/main/post'
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
           <Route path="/mypage" element={<Mypage />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/write" element={<Write />}></Route>
-          <Route path="/s" element={<ImgSlide />}></Route>
+          <Route path="/post" element={<Post />}></Route>
         </Routes>
       </BrowserRouter>
     </>
