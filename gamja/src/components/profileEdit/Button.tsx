@@ -2,17 +2,20 @@ import styled from "styled-components";
 
 interface BtnProps {
   text: string;
+  edit?: () => void;
 }
 
-export const Btn = ({ text }: BtnProps) => {
+export const Button = ({ text, edit }: BtnProps) => {
   return (
     <>
-      <Button text={text}>{text}</Button>
+      <Btn text={text} onClick={edit}>
+        {text}
+      </Btn>
     </>
   );
 };
 
-const Button = styled.button<{ text: string }>`
+const Btn = styled.button<{ text: string }>`
   width: 65px;
   height: 50px;
   border: 1px solid gray;
