@@ -1,7 +1,7 @@
 import ChatHistory from "../components/user/chatHistory";
 import HeaderV2 from "../components/common/headerV2";
 import styled from "styled-components";
-import { ProfileEdit } from "../components/user/profileEdit/profileEdit.";
+import { ProfileEdit } from "../components/user/profileEdit/profileEdit";
 import { useState } from "react";
 
 function Mypage() {
