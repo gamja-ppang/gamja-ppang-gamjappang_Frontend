@@ -1,8 +1,12 @@
 import ChatHistory from "../components/user/chatHistory";
 import HeaderV2 from "../components/common/headerV2";
 import styled from "styled-components";
+import { ProfileEdit } from "../components/profileEdit/profileEdit";
+import { useState } from "react";
 
 function Mypage() {
+  const [edit, setEdit] = useState(false);
+
   return (
     <>
       <HeaderV2 />
@@ -12,7 +16,9 @@ function Mypage() {
           <MyProfileTitle>내 프로필</MyProfileTitle>
           <UserProfile></UserProfile>
           <NickName>감자빵</NickName>
-          <ModifyBtn>프로필 수정</ModifyBtn>
+          {edit || (
+            <ModifyBtn onClick={() => setEdit(true)}>프로필 수정</ModifyBtn>
+          )}
         </Myprofile>
 
         <ChatWrap>
@@ -22,6 +28,8 @@ function Mypage() {
           <ChatHistory></ChatHistory>
         </ChatWrap>
       </Wrapper>
+
+      {edit && <ProfileEdit close={() => setEdit(false)}/>}
     </>
   );
 }
