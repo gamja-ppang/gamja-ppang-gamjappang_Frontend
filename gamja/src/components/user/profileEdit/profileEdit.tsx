@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { InputEdit } from "./inputEdit";
-import { BtnWrapper } from "./Btnwrapper";
+import { Button } from "./Btn";
 
 export const ProfileEdit = () => {
   return (
@@ -19,10 +19,21 @@ export const ProfileEdit = () => {
         />
       </InputWrapper>
 
-      <BtnWrapper />
+      <ButtonWrapper>
+        <Button text="취소" />
+        <Button text="확인" />
+      </ButtonWrapper>
+
     </Wrapper>
   );
 };
+
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  gap: 5px;
+  margin-top: 20px;
+`;
 
 const InputWrapper = styled.div`
   display: flex;
