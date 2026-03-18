@@ -16,9 +16,6 @@ function Mypage() {
           <MyProfileTitle>내 프로필</MyProfileTitle>
           <UserProfile></UserProfile>
           <NickName>감자빵</NickName>
-          {edit || (
-            <ModifyBtn onClick={() => setEdit(true)}>프로필 수정</ModifyBtn>
-          )}
         </Myprofile>
 
         <ChatWrap>
@@ -29,7 +26,13 @@ function Mypage() {
         </ChatWrap>
       </Wrapper>
 
-      {edit && <ProfileEdit close={() => setEdit(false)}/>}
+      <EditButton>
+        {edit || (
+          <ModifyBtn onClick={() => setEdit(true)}>프로필 수정</ModifyBtn>
+        )}
+      </EditButton>
+
+      {edit && <ProfileEdit close={() => setEdit(false)} />}
     </>
   );
 }
@@ -38,11 +41,16 @@ const ChatWrap = styled.div`
   margin-right: 100px;
 `;
 
+const EditButton = styled.div`
+  margin-left: 40px;
+`;
+
 const Wrapper = styled.div`
   margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 360px;
 `;
 
 const ChatTitle = styled.div`
@@ -56,8 +64,6 @@ const Myprofile = styled.div`
   flex-direction: column;
   gap: 15px;
   margin-left: 50px;
-  margin-top: 30px;
-  width: 212px;
 `;
 
 const MyProfileTitle = styled.div`
