@@ -49,13 +49,13 @@ function Signup() {
               onChange={(e) => setPassword(e.target.value)}
             ></Input>
           </InputCon>
-          <LoginBtn
+          <SignupButton
             onClick={() => {
               loginHandle();
             }}
           >
             회원가입
-          </LoginBtn>
+          </SignupButton>
           <SignupCon>
             <div
               style={{
@@ -65,14 +65,7 @@ function Signup() {
             >
               만약 계정이 있다면?
             </div>
-            <Signu
-              style={{
-                marginLeft: "10px",
-                cursor: "pointer",
-              }}
-            >
-              로그인
-            </Signu>
+            <LoginButton>로그인</LoginButton>
           </SignupCon>
           <div
             style={{
@@ -182,7 +175,7 @@ const InputCon = styled.div`
   margin: 10px;
 `;
 
-const LoginBtn = styled.button`
+const SignupButton = styled.button`
   border: 1px solid rgb(213, 189, 175);
   width: 268px;
   height: 49px;
@@ -192,7 +185,10 @@ const LoginBtn = styled.button`
   cursor: pointer;
 `;
 
-const Signu = styled.p``;
+const LoginButton = styled.p`
+  margin-left: "10px";
+  cursor: "pointer";
+`;
 
 const SignupCon = styled.div`
   display: flex;
