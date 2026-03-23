@@ -51,7 +51,7 @@ function Signup() {
           </InputCon>
           <LoginBtn
             onClick={() => {
-              navigate("/main");
+              loginHandle();
             }}
           >
             회원가입
@@ -69,9 +69,6 @@ function Signup() {
               style={{
                 marginLeft: "10px",
                 cursor: "pointer",
-              }}
-              onClick={() => {
-                loginHandle;
               }}
             >
               로그인
