@@ -44,7 +44,7 @@ function Signup() {
                   setCertification(true);
                 }}
               >
-                이메일 인증
+                인증 요청
               </Check>
             </div>
             {certification && (
@@ -64,7 +64,6 @@ function Signup() {
               </>
             )}
 
-            <Check>중복확인</Check>
             <Input
               placeholder="비밀번호 입력"
               type="password"
@@ -87,7 +86,14 @@ function Signup() {
             >
               만약 계정이 있다면?
             </div>
-            <LoginButton>로그인</LoginButton>
+            <LoginButton
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              로그인
+            </LoginButton>
           </SignupCon>
           <div
             style={{
@@ -119,7 +125,7 @@ const Check = styled.div`
   font-size: 14px;
   color: white;
   background-color: rgba(141, 119, 119);
-  width: 70px;
+  width: 67px;
   border-radius: 5px;
   display: flex;
   margin-left: 30px;
