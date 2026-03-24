@@ -1,6 +1,11 @@
 import api from "../..";
 
-const sendEmail = async (email: string) => {
+interface auth {
+  email: string;
+  signupCode?: string;
+}
+
+export const sendEmail = async ({ email }: auth) => {
   try {
     const response = await api.post(`/api/v1/auth/code/send`, {
       email,
@@ -12,4 +17,15 @@ const sendEmail = async (email: string) => {
   }
 };
 
-export default sendEmail;
+export const verifyEmail = async ({ email, signupCode }: auth) => {
+  try {
+    const response = await api.post(`/api/v1/auth/code/verify`, {
+      email,
+      signupCode,
+    });
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
