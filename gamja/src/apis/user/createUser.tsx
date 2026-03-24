@@ -1,7 +1,12 @@
 import api from "..";
 
-const CreateUser = async (userData: any) => {
-  const { username, email, password } = userData;
+interface userCreate {
+  username: string;
+  email: string;
+  password: string;
+}
+
+const CreateUser = async ({ username, email, password }: userCreate) => {
   try {
     const response = await api.post(`/api/v1/auth/join`, {
       username,
