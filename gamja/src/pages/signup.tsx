@@ -14,6 +14,7 @@ function Signup() {
   const [password, setPassword] = useState<string>("");
   const [certification, setCertification] = useState<boolean>(false);
   const [code, setCode] = useState<string>("");
+  const [isVerified, setIsVerified] = useState<boolean>(false);
   const navigate = useNavigate();
 
   return (
@@ -53,9 +54,12 @@ function Signup() {
                   onChange={(e) => setCode(e.target.value)}
                 ></input>
                 <button
-                  onClick={() => verifyEmail({ email, signupCode: code })}
+                  onClick={async () => {
+                    await verifyEmail({ email, signupCode: code });
+                    setIsVerified(true);
+                  }}
                 >
-                  확인
+                  {isVerified ? "인증됨" : "확인"}
                 </button>
               </>
             )}
