@@ -78,7 +78,12 @@ function Signup() {
           </InputCon>
           <SignupButton
             onClick={async () => {
-              await CreateUser({ username, email, password });
+              try {
+                await CreateUser({ username, email, password });
+                alert("회원가입 성공!");
+              } catch (error) {
+                alert(`회원가입 실패 ${error}`)
+              }
             }}
           >
             회원가입
