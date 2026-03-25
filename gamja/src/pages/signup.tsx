@@ -78,11 +78,16 @@ function Signup() {
           </InputCon>
           <SignupButton
             onClick={async () => {
+              if (!isVerified) {
+                alert("로그인 인증을 해주세요");
+                return;
+              }
               try {
                 await CreateUser({ username, email, password });
                 alert("회원가입 성공!");
+                navigate("/login");
               } catch (error) {
-                alert(`회원가입 실패 ${error}`)
+                alert(`회원가입 실패 ${error}`);
               }
             }}
           >
