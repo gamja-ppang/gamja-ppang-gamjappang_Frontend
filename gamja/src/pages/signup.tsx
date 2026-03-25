@@ -9,7 +9,7 @@ import CreateUser from "../apis/user/createUser";
 import { sendEmail, verifyEmail } from "../apis/user/ certification/auth";
 
 function Signup() {
-  const [name, setName] = useState<string>("");
+  const [username, setUsername] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [certification, setCertification] = useState<boolean>(false);
@@ -31,7 +31,7 @@ function Signup() {
           <InputCon>
             <Input
               placeholder="닉네임 입력"
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
             ></Input>
             <div
               style={{
@@ -78,7 +78,7 @@ function Signup() {
           </InputCon>
           <SignupButton
             onClick={async () => {
-              await CreateUser({ name, email, password });
+              await CreateUser({ username, email, password });
             }}
           >
             회원가입
