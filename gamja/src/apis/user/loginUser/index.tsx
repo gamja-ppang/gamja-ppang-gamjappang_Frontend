@@ -7,11 +7,15 @@ export const LoginUser = async ({ email, password }: LoginRequest) => {
       email,
       password,
     });
-    const accessToken = response.accessToken || undefined;
-    const refreshToken = response.refreshToken || undefined;
 
-    localStorage.setItem("accessToken", accessToken);
-    localStorage.setItem("refreshToken", refreshToken);
+    const { accessToken, refreshToken } = response;
+    if (accessToken && refreshToken) {
+      localStorage.setItem("accessToken", accessToken);
+      localStorage.setItem("refreshToken", refreshToken);
+    } else {
+      alert("토큰이 없습니다.");
+    }
+
     return response;
   } catch (error: any) {
     const errorData = error.response?.data?.description;
