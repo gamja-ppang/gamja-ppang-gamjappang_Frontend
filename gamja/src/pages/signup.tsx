@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import cat from "../assets/Login/cat.svg";
 import { useState } from "react";
 import { CreateUser } from "../apis/user/createUser";
 import { sendEmail, verifyEmail } from "../apis/user/auth/index";
 import { IconWrap } from "../components/auth/iconWrap";
+import { WelcomeTitle } from "../components/auth/welcomeTitle";
+import { Img } from "../components/auth/leftImg";
 
 function Signup() {
   const [username, setUsername] = useState<string>("");
@@ -18,14 +19,9 @@ function Signup() {
   return (
     <>
       <Wrapper>
-        <ImgWrap>
-          <img src={cat} alt="" />
-        </ImgWrap>
+        <Img />
         <RightWrap>
-          <TitleCon>
-            <Title>Welcome!</Title>
-            <Subtitle>토이프젝</Subtitle>
-          </TitleCon>
+          <WelcomeTitle />
           <InputCon>
             <Input
               placeholder="닉네임 입력"
@@ -165,35 +161,6 @@ const Wrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-`;
-const ImgWrap = styled.div`
-  width: 537px;
-  height: 653px;
-`;
-const Title = styled.h1`
-  color: rgb(181, 149, 130);
-  border-bottom: 2px solid rgb(181, 149, 130);
-  width: 119px;
-  font-size: 40px;
-  border: none;
-  font-weight: 800;
-  margin-right: 250px;
-`;
-
-const Subtitle = styled.h2`
-  color: rgb(181, 149, 130);
-  font-size: 20px;
-  margin-top: -20px;
-  font-weight: 600;
-`;
-
-const TitleCon = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-right: 20px;
-  border: 1px solid black;
-  height: 60px;
-  justify-content: space-between;
 `;
 
 const Input = styled.input`

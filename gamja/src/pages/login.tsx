@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import cat from "../assets/Login/cat.svg";
 import { useState } from "react";
 import { LoginUser } from "../apis/user/loginUser";
 import { IconWrap } from "../components/auth/iconWrap";
 import { Input } from "../components/auth/input";
+import { WelcomeTitle } from "../components/auth/welcomeTitle";
+import { Img } from "../components/auth/leftImg";
 
 function Login() {
   const navigate = useNavigate();
@@ -14,15 +15,9 @@ function Login() {
   return (
     <>
       <Wrapper>
-        <ImgWrap>
-          <img src={cat} alt="" />
-        </ImgWrap>
+        <Img />
         <RightWrap>
-          <TitleCon>
-            <Title>Welcome!</Title>
-            <Subtitle>토이프젝</Subtitle>
-          </TitleCon>
-
+          <WelcomeTitle />
           <InputCon>
             <Input
               placeholder="이메일 입력"
