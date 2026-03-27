@@ -29,8 +29,9 @@ function Signup() {
           <InputCon>
             <Input
               placeholder="닉네임 입력"
-              onChange={(e) => setUsername(e.target.value)}
-            ></Input>
+              type="password"
+              onChange={(e) => setEmail(e.target.value)}
+            />
             <div
               style={{
                 display: "flex",
@@ -40,8 +41,9 @@ function Signup() {
             >
               <Input
                 placeholder="이메일 입력"
+                type="password"
                 onChange={(e) => setEmail(e.target.value)}
-              ></Input>
+              />
               <Check
                 onClick={async () => {
                   await sendEmail({ email });
@@ -71,8 +73,8 @@ function Signup() {
             <Input
               placeholder="비밀번호 입력"
               type="password"
-              onChange={(e) => setPassword(e.target.value)}
-            ></Input>
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </InputCon>
           <SignupButton
             onClick={async () => {

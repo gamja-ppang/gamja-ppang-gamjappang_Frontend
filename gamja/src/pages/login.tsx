@@ -4,6 +4,7 @@ import cat from "../assets/Login/cat.svg";
 import { useState } from "react";
 import { LoginUser } from "../apis/user/loginUser";
 import { IconWrap } from "../components/auth/iconWrap";
+import { Input } from "../components/auth/input";
 
 function Login() {
   const navigate = useNavigate();
@@ -21,17 +22,20 @@ function Login() {
             <Title>Welcome!</Title>
             <Subtitle>토이프젝</Subtitle>
           </TitleCon>
+
           <InputCon>
             <Input
               placeholder="이메일 입력"
+              type="password"
               onChange={(e) => setEmail(e.target.value)}
-            ></Input>
+            />
             <Input
               placeholder="비밀번호 입력"
               type="password"
               onChange={(e) => setPassword(e.target.value)}
-            ></Input>
+            />
           </InputCon>
+
           <LoginBtn
             onClick={async () => {
               await LoginUser({ email, password });
@@ -117,20 +121,6 @@ const TitleCon = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 20px;
-`;
-
-const Input = styled.input`
-  width: 370px;
-  height: 52px;
-  border-radius: 15px;
-  font-size: 15px;
-  border: 1px solid rgb(213, 189, 175);
-  margin: 10px;
-  padding: 0px 10px;
-
-  &:focus {
-    outline: none;
-  }
 `;
 
 const InputCon = styled.div`
