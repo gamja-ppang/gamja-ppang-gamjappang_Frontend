@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import cat from "../assets/Login/cat.svg";
 import { useState } from "react";
 import { LoginUser } from "../apis/user/loginUser";
-import { IconWrap } from "../components/login/signup/iconWrap";
+import { IconWrap } from "../components/auth/iconWrap";
 
 function Login() {
   const navigate = useNavigate();
