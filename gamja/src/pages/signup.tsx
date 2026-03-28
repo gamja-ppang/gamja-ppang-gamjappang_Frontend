@@ -6,13 +6,13 @@ import { sendEmail, verifyEmail } from "../apis/user/auth/index";
 import { IconWrap } from "../components/auth/iconWrap";
 import { WelcomeTitle } from "../components/auth/welcomeTitle";
 import { Img } from "../components/auth/leftImg";
+import { InputCode } from "../components/auth/inputCode";
 
 function Signup() {
   const [username, setUsername] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [certification, setCertification] = useState<boolean>(false);
-  const [code, setCode] = useState<string>("");
   const [isVerified, setIsVerified] = useState<boolean>(false);
   const navigate = useNavigate();
 
@@ -45,22 +45,7 @@ function Signup() {
               </Check>
             </EmailWrapper>
 
-            {certification && (
-              <>
-                <input
-                  placeholder="인증코드를 입력하세요"
-                  onChange={(e) => setCode(e.target.value)}
-                ></input>
-                <button
-                  onClick={async () => {
-                    await verifyEmail({ email, signupCode: code });
-                    setIsVerified(true);
-                  }}
-                >
-                  {isVerified ? "인증됨" : "확인"}
-                </button>
-              </>
-            )}
+            {certification && <InputCode email={email} />}
 
             <Input
               placeholder="비밀번호 입력"
