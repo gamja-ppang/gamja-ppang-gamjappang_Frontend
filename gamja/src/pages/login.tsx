@@ -39,14 +39,7 @@ function Login() {
             로그인
           </LoginBtn>
           <SignupCon>
-            <div
-              style={{
-                color: "gray",
-                fontSize: "17px",
-              }}
-            >
-              만약 계정이 없다면?
-            </div>
+            <Noaccount>만약 계정이 없다면?</Noaccount>
             <Signup
               style={{
                 marginLeft: "10px",
@@ -59,14 +52,7 @@ function Login() {
               회원가입
             </Signup>
           </SignupCon>
-          <div
-            style={{
-              marginBottom: "10px",
-              marginTop: "10px",
-            }}
-          >
-            또는
-          </div>
+          <Or>또는</Or>
           <IconWrap />
         </RightWrap>
       </Wrapper>
@@ -75,6 +61,16 @@ function Login() {
 }
 
 export default Login;
+
+const Noaccount = styled.div`
+  color: gray;
+  font-size: 17px;
+`;
+
+const Or = styled.div`
+  margin-bottom: 10px;
+  margin-top: 10px;
+`;
 
 const RightWrap = styled.div`
   width: 536px;
