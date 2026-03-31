@@ -3,7 +3,7 @@ import HeaderV2 from "../components/common/headerV2";
 import styled from "styled-components";
 import { ProfileEdit } from "../components/profile/profileEdit.tsx";
 import { useState } from "react";
-import { Logout } from "../components/profile/logout.tsx";
+import { LogoutButton } from "../components/profile/logout.tsx";
 
 function Mypage() {
   const [edit, setEdit] = useState(false);
@@ -17,7 +17,7 @@ function Mypage() {
           <MyProfileTitle>내 프로필</MyProfileTitle>
           <UserProfile></UserProfile>
           <NickName>감자빵</NickName>
-          <Logout />
+          <LogoutButton onClick={() => {}} />
         </Myprofile>
 
         <ChatWrap>

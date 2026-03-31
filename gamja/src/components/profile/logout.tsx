@@ -1,9 +1,20 @@
 import styled from "styled-components";
+import { Logout } from "../../apis/user/logout.tsx";
 
-export const Logout = () => {
+interface props {
+  onClick: () => void;
+}
+
+export const LogoutButton = ({ onClick }: props) => {
+  const handle = async () => {
+    const token = localStorage.getItem("refreshToken") || "";
+    await Logout({ refreshToken: token });
+    onClick();
+  };
+
   return (
     <>
-      <Wrapper>로그아웃</Wrapper>
+      <Wrapper onClick={handle}>로그아웃</Wrapper>
     </>
   );
 };
