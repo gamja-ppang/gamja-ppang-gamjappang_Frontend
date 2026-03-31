@@ -17,7 +17,9 @@ const Wrapper = styled.div`
   align-items: center;
   border: 1px solid black;
   color: white;
+  font-size: 15px;
   cursor: pointer;
+  border-radius: 5px;
 
   &:hover {
     color: #c2c2c2;
