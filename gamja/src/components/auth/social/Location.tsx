@@ -25,3 +25,16 @@ export const googleHandleLogin = () => {
 
   window.location.href = `${rootUrl}?${queryString}`;
 };
+
+export const kakaoHandleLogin = () => {
+  const rootUrl = "https://kauth.kakao.com/oauth/authorize";
+  const options = {
+    client_id: import.meta.env.VITE_KAKAO_CLIENT_ID,
+    redirect_uri: import.meta.env.VITE_REDIRECT_URI,
+    response_type: "code",
+    scope: "profile_nickname account_email",
+  };
+  const queryString = new URLSearchParams(options).toString();
+
+  window.location.href = `${rootUrl}?${queryString}`;
+};
