@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Header from "../components/common/headerV2";
+import Header from "../components/header/header";
 
 function Detail() {
   return (

@@ -1,11 +1,11 @@
-import HeaderV2 from "../components/common/headerV2";
+import Header from "../components/header/header";
 import WritingSection from "../components/write/writingSection";
 import styled from "styled-components";
 
 function Write() {
   return (
     <>
-      <HeaderV2 />
+      <Header />
       <TopWrap>
         <Title placeholder="제목을 작성하세요"></Title>
         <ProfileWrap>

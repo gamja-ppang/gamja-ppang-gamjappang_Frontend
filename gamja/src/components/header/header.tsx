@@ -1,18 +1,25 @@
 import styled from "styled-components";
 import { GoSearch } from "react-icons/go";
 
-function Header() {
+interface HeaderProps {
+  showSerch?: boolean;
+}
+
+function Header({ showSerch = false }: HeaderProps) {
   return (
     <>
       <Wrap>
         <div style={{ display: "flex", marginLeft: "50px" }}>
           <Title>토이프젝</Title>
-          <SerchWrap>
-            <Input placeholder="검색어를 입력하세요"></Input>
-            <SerchBarWrap>
-              <GoSearch />
-            </SerchBarWrap>
-          </SerchWrap>
+
+          {showSerch && (
+            <SerchWrap>
+              <Input placeholder="검색어를 입력하세요"></Input>
+              <SerchBarWrap>
+                <GoSearch />
+              </SerchBarWrap>
+            </SerchWrap>
+          )}
         </div>
 
         <div

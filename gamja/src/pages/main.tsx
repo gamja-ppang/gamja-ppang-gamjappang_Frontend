@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import Header from "../components/common/header";
+import Header from "../components/header/header";
 import ImgSlide from "../components/main/ImgSlide";
 import Post from "../components/main/post";
 
 function Main() {
   return (
     <>
-      <Header />
+      <Header showSerch={true} />
       <ImgSlide />
 
       <MainWrap>

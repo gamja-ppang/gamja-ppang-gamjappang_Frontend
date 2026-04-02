@@ -1,5 +1,5 @@
 import ChatHistory from "../components/user/chatHistory";
-import HeaderV2 from "../components/common/headerV2";
+import Header from "../components/header/header.tsx";
 import styled from "styled-components";
 import { ProfileEdit } from "../components/profile/profileEdit.tsx";
 import { useState } from "react";
@@ -10,7 +10,7 @@ function Mypage() {
 
   return (
     <>
-      <HeaderV2 />
+      <Header />
 
       <Wrapper>
         <Myprofile>
