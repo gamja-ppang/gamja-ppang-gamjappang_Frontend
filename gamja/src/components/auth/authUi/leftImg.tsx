@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import cat from "../../assets/Login/cat.svg";
+import cat from "../../../assets/Login/cat.svg";
 
 export const Img = () => {
   return (

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Header from "../components/header/header";
+import Header from "../components/common/header";
 import ImgSlide from "../components/main/ImgSlide";
 import Post from "../components/main/post";
 

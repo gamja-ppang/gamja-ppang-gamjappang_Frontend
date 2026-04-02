@@ -1,7 +1,7 @@
-import ChatHistory from "../components/user/chatHistory";
-import Header from "../components/header/header.tsx";
+import ChatHistory from "../components/chat/chatHistory.tsx";
+import Header from "../components/common/header.tsx";
 import styled from "styled-components";
-import { ProfileEdit } from "../components/profile/profileEdit.tsx";
+import { ProfileEdit } from "../components/profile/profileEdit/profileEdit.tsx";
 import { useState } from "react";
 import { LogoutButton } from "../components/profile/logout.tsx";
 
@@ -17,7 +17,7 @@ function Mypage() {
           <MyProfileTitle>내 프로필</MyProfileTitle>
           <UserProfile></UserProfile>
           <NickName>감자빵</NickName>
-          <LogoutButton onClick={() => {}} />
+          <LogoutButton />
         </Myprofile>
 
         <ChatWrap>

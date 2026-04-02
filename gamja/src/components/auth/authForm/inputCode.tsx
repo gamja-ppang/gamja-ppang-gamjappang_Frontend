@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { verifyEmail } from "../../apis/user/auth/index";
+import { verifyEmail } from "../../../apis/user/auth/index";
 
 interface type {
   email: string;

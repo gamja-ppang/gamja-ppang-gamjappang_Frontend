@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { LoginUser } from "../apis/user/loginUser/local";
-import { IconWrap } from "../components/auth/iconWrap";
-import { Input } from "../components/auth/input";
-import { WelcomeTitle } from "../components/auth/welcomeTitle";
-import { Img } from "../components/auth/leftImg";
+import { IconWrap } from "../components/auth/authUi/iconWrap";
+import { Input } from "../components/auth/authForm/input";
+import { WelcomeTitle } from "../components/auth/authUi/welcomeTitle";
+import { Img } from "../components/auth/authUi/leftImg";
 
 function Login() {
   const navigate = useNavigate();

@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { CreateUser } from "../apis/user/createUser";
 import { sendEmail } from "../apis/user/auth/index";
-import { IconWrap } from "../components/auth/iconWrap";
-import { WelcomeTitle } from "../components/auth/welcomeTitle";
-import { Img } from "../components/auth/leftImg";
-import { InputCode } from "../components/auth/inputCode";
+import { IconWrap } from "../components/auth/authUi/iconWrap";
+import { WelcomeTitle } from "../components/auth/authUi/welcomeTitle";
+import { Img } from "../components/auth/authUi/leftImg";
+import { InputCode } from "../components/auth/authForm/inputCode";
 
 function Signup() {
   const [username, setUsername] = useState<string>("");

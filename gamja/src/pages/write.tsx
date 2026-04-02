@@ -1,4 +1,4 @@
-import Header from "../components/header/header";
+import Header from "../components/common/header";
 import WritingSection from "../components/write/writingSection";
 import styled from "styled-components";
 
