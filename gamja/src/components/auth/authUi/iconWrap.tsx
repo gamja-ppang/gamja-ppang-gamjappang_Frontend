@@ -2,7 +2,8 @@ import styled from "styled-components";
 import kakao from "../../../assets/Login/kakao.svg";
 import naver from "../../../assets/Login/naver.svg";
 import google from "../../../assets/Login/google.svg";
-import { googleHandleLogin } from "../social/googleLocation";
+import { googleHandleLogin } from "../social/Location";
+import { naverHandleLogin } from "../social/Location";
 
 export const IconWrap = () => {
   return (
@@ -11,7 +12,7 @@ export const IconWrap = () => {
         <img src={kakao} alt="" />
       </Icon>
       <Icon>
-        <img src={naver} alt="" />
+        <img src={naver} alt="" onClick={naverHandleLogin} />
       </Icon>
       <Icon>
         <img src={google} alt="" onClick={googleHandleLogin} />

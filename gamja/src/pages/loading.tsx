@@ -1,18 +1,20 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../apis/index";
 
 export const Loading = () => {
   const navigate = useNavigate();
+  const { provider } = useParams<{ provider: string }>();
 
   useEffect(() => {
     const query = new URLSearchParams(window.location.search);
     const code = query.get("code");
 
     const loginTask = async () => {
+      if (!provider || !code) return;
       try {
         const response: any = await api.post(`/api/v1/auth/social`, {
-          provider: "google",
+          provider: provider,
           authorizationCode: code,
           redirectUri: import.meta.env.VITE_REDIRECT_URI,
         });
@@ -30,6 +32,6 @@ export const Loading = () => {
     };
 
     loginTask();
-  }, []);
+  }, [provider, navigate]);
   return <>Loading....</>;
 };
