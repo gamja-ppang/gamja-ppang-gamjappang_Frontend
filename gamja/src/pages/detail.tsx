@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import Header from "../components/common/header";
+import EditButton from "../components/write/editButton";
 
 function Detail() {
   return (
     <>
       <Header />
+
       <Wrap>
         <Title>[JAVA] Optional이란? Optional 개념 및 사용법</Title>
         <TitleBottom>
@@ -20,6 +22,7 @@ function Detail() {
 
         <Text>대충 내용</Text>
       </Wrap>
+      <EditButton />
     </>
   );
 }
