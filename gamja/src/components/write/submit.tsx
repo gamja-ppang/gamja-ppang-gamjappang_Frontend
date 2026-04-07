@@ -1,14 +1,19 @@
 import styled from "styled-components";
+import WriteSubmit from "../../apis/write/index";
 
-const Submit = () => {
-  const submit = () => {
-    
+interface Type {
+  title: string;
+}
+
+const Submit = ({ title }: Type) => {
+  const handleSubmit = async () => {
+    WriteSubmit({ title, content: "", tag: [] });
   };
 
   return (
     <>
       <Wrap>
-        <Button onClick={submit}>제출하기</Button>
+        <Button onClick={handleSubmit}>제출하기</Button>
       </Wrap>
     </>
   );

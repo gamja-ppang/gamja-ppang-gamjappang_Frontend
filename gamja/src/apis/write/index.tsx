@@ -9,6 +9,10 @@ const WriteSubmit = async ({ title, content, tag }: type) => {
       tag,
     });
 
+    if (response.status === 200) {
+      alert("제출 성공!");
+    }
+
     return response;
   } catch (error) {
     console.log(error);

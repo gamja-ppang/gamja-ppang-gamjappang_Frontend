@@ -1,14 +1,21 @@
 import styled from "styled-components";
-import { useState } from "react";
 
-const Title = () => {
-  const [title, setTitle] = useState("");
-  const onChange = (e: any) => {
+interface Type {
+  title: string;
+  setTitle: (val: string) => void;
+}
+
+const Title = ({ title, setTitle }: Type) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
   return (
     <>
-      <Wrap placeholder="제목을 작성하세요" onChange={onChange}></Wrap>
+      <Wrap
+        placeholder="제목을 작성하세요"
+        onChange={onChange}
+        value={title}
+      ></Wrap>
     </>
   );
 };

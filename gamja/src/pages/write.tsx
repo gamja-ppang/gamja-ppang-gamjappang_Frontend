@@ -3,14 +3,15 @@ import WritingSection from "../components/write/writingSection";
 import styled from "styled-components";
 import Title from "../components/write/title";
 import Submit from "../components/write/submit";
-
+import { useState } from "react";
 
 function Write() {
+  const [title, setTitle] = useState("");
   return (
     <>
       <Header />
       <TopWrap>
-        <Title />
+        <Title title={title} setTitle={setTitle} />
         <ProfileWrap>
           <Profile></Profile>
           <Name>작성자</Name>
@@ -18,7 +19,7 @@ function Write() {
       </TopWrap>
 
       <WritingSection />
-      <Submit />
+      <Submit title={title} />
     </>
   );
 }
