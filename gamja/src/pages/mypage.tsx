@@ -1,4 +1,4 @@
-import ChatHistory from "../components/chat/chatHistory.tsx";
+import ChatHistory from "../components/chat/commentHistory.tsx";
 import Header from "../components/common/header.tsx";
 import styled from "styled-components";
 import { ProfileEdit } from "../components/profile/profileEdit/profileEdit.tsx";
