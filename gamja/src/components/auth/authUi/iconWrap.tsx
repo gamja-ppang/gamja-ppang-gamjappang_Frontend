@@ -6,7 +6,7 @@ import {
   googleHandleLogin,
   kakaoHandleLogin,
   naverHandleLogin,
-} from "../social/Location";
+} from "../../../apis/user/loginUser/social/Location";
 
 export const IconWrap = () => {
   return (
