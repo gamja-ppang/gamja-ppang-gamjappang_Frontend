@@ -14,7 +14,7 @@ const WriteSubmit = async ({ title, content, tag }: type) => {
       window.location.href = "/main";
     }
 
-    return response;
+    return response.data;
   } catch (error) {
     console.log(error);
     throw error;

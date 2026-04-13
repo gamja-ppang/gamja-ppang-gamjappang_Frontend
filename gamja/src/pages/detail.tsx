@@ -22,7 +22,7 @@ function Detail() {
 
         <Text>대충 내용</Text>
       </Wrap>
-      <EditButton/>
+      <EditButton />
     </>
   );
 }

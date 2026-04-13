@@ -8,7 +8,7 @@ export const CreateUser = async ({ username, email, password }: UserCreate) => {
       email,
       password,
     });
-    return response;
+    return response.data;
   } catch (error: any) {
     const errorData = error.response?.data?.description;
     alert(errorData);

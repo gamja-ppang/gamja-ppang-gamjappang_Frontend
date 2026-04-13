@@ -7,7 +7,7 @@ export const Logout = async ({ refreshToken }: type) => {
       refreshToken,
     });
 
-    return response;
+    return response.data;
   } catch (error: any) {
     const errorData = error.response?.data?.description || "로그아웃 실패";
     alert(errorData);

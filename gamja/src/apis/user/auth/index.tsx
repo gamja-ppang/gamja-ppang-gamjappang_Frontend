@@ -6,7 +6,7 @@ export const sendEmail = async ({ email }: Auth) => {
     const response = await api.post(`/api/v1/auth/code/send`, {
       email,
     });
-    return response;
+    return response.data;
   } catch (error) {
     console.log(error);
     throw error;

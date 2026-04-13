@@ -16,7 +16,7 @@ export const LoginUser = async ({ email, password }: LoginRequest) => {
       alert("토큰이 없습니다.");
     }
 
-    return response;
+    return response.data;
   } catch (error: any) {
     const errorData = error.response?.data?.description;
     alert(errorData);
