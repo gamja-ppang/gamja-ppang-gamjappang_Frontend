@@ -1,25 +1,36 @@
-import type { Type } from "../../apis/get/main/likePost/type";
 import styled from "styled-components";
 import { CiHeart } from "react-icons/ci";
 
-export const LikeComment = ({ data }: { data: Type }) => {
+interface LikeCommentProps {
+  name: string;
+  title: string;
+  likeCount: number;
+  createdAt: number;
+}
+
+export const LikeComment = ({
+  name,
+  title,
+  likeCount,
+  createdAt,
+}: LikeCommentProps) => {
   return (
     <>
       <Wrap>
         <ProfileWrap>
           <Profile></Profile>
-          <Name>{data.author.name}</Name>
+          <Name>{name}</Name>
         </ProfileWrap>
 
         <DetailWrap>
-          <Title>{data.title}</Title>
+          <Title>{title}</Title>
         </DetailWrap>
 
         <Bottom>
           <Heart>
-            <CiHeart /> {data.likeCount}
+            <CiHeart /> {likeCount}
           </Heart>
-          <Date>{data.createdAt}</Date>
+          <Date>{createdAt}</Date>
         </Bottom>
       </Wrap>
     </>
