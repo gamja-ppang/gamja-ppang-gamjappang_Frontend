@@ -1,10 +1,19 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 const EditButton = () => {
+  const [modal, setModal] = useState<boolean>(false);
+
   return (
     <>
       <Wrap>
-        <Button>수정하기</Button>
+        <Button
+          onClick={() => {
+            setModal(!modal);
+          }}
+        >
+          수정하기
+        </Button>
       </Wrap>
     </>
   );

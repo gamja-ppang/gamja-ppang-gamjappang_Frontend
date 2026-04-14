@@ -1,12 +1,18 @@
 import styled from "styled-components";
 
-const Comment = () => {
+interface CommentProps {
+  author: string;
+  content: string;
+  createdAt: string;
+}
+
+const Comment = ({ author, content, createdAt }: CommentProps) => {
   return (
     <>
       <Wrap>
-        <Name>이름</Name>
-        <Content>내용</Content>
-        <CreatedAt>생성일자</CreatedAt>
+        <Name>{author}</Name>
+        <Content>{content}</Content>
+        <CreatedAt>{createdAt}</CreatedAt>
       </Wrap>
     </>
   );
