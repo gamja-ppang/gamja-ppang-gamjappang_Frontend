@@ -8,6 +8,7 @@ import Signup from "./pages/signup";
 import Write from "./pages/write";
 import { Reset } from "styled-reset";
 import { Loading } from "./pages/loading";
+import { Edit } from "./pages/edit";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/write" element={<Write />}></Route>
           <Route path="/login/callback" element={<Loading />} />
+          <Route path="/edit:postId" element={<Edit />}></Route>
         </Routes>
       </BrowserRouter>
     </>
