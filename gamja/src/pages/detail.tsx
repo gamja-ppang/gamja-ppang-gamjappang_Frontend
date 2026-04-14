@@ -5,10 +5,13 @@ import { useEffect, useState } from "react";
 import Comment from "../components/chat/comment";
 import GetComment from "../apis/get/postComment/index";
 import type { Type } from "../apis/get/postComment/type";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { postDelete } from "../apis/delete/index";
 
 function Detail() {
   const [comment, setComment] = useState<Type[]>([]);
+
+  const navigate = useNavigate();
 
   const { postId } = useParams();
   const currentPostId = Number(postId);
@@ -26,6 +29,17 @@ function Detail() {
 
     getComment();
   }, []);
+
+  const handleDelete = async () => {
+    if (window.confirm("정말로 삭제하시겠습니까?")) {
+      try {
+        await postDelete({ postId: currentPostId });
+        navigate("/mypost");
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
 
   return (
     <>
@@ -47,6 +61,7 @@ function Detail() {
         <Text>대충 내용</Text>
       </Wrap>
       <GoToEditButton postId={currentPostId} />
+      <button onClick={handleDelete}>삭제하기</button>
       {comment.map((comment, index) => {
         return (
           <Comment
