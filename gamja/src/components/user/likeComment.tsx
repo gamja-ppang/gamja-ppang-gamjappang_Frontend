@@ -5,7 +5,7 @@ interface LikeCommentProps {
   name: string;
   title: string;
   likeCount: number;
-  createdAt: number;
+  createdAt: string;
 }
 
 export const LikeComment = ({
