@@ -17,8 +17,8 @@ export const Edit = () => {
       try {
         const { data } = await api.get(`/api/v1/post/${postId}`);
 
-        setTitle(data.data.title);
-        setContent(data.data.content);
+        setTitle(data.title);
+        setContent(data.content);
       } catch (error) {
         console.log(error);
       }
