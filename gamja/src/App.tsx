@@ -18,7 +18,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />}></Route>
-          <Route path="/detail" element={<Detail />}></Route>
+          <Route path="/detail/:postId" element={<Detail />}></Route>
           <Route path="/mypost" element={<MainMyPost />}></Route>
           <Route path="/mylike" element={<MainLikePost />}></Route>
           <Route path="/mypage" element={<Mypage />}></Route>
